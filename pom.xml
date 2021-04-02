@@ -1,0 +1,31 @@
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-clean-plugin</artifactId>
+			<version>2.4.1</version>
+		</plugin>
+		<!-- Docker maven plugin -->
+		<plugin>
+			<groupId>com.spotify</groupId>
+			<artifactId>docker-maven-plugin</artifactId>
+			<version>1.0.0</version>
+			<configuration>
+				<imageName>springboot-demo</imageName>
+				<dockerDirectory>src/main/docker</dockerDirectory>
+				<resources>
+					<resource>
+					<targetPath>/</targetPath>
+					<directory>${project.build.directory}</directory>
+					<include>${project.build.finalName}.jar</include>
+					</resource>
+				</resources>
+			</configuration>
+		</plugin>
+		<!-- Docker maven plugin -->
+	</plugins>
+</build>
