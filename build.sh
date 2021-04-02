@@ -15,4 +15,4 @@ sudo docker rmi springboot/demo:1.0
 sudo docker build -t springboot/demo:1.0 .
 
 # 创建容器并启动
-sudo docker run -d -p 8888:8888 --name springboot-demo springboot/demo:1.0
+sudo docker run -d -p 9999:9999 --name springboot-demo springboot/demo:1.0
